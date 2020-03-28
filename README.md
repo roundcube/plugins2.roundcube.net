@@ -11,3 +11,24 @@ working while still maintained Roudcube plugins are now published at packagist.o
 The second part is a **singe-page app** providing a minimalist UI to search the packagist.org repository
 for Roundcube plugins.
 
+## Server
+
+## `packagist.php`
+
+Endpoint serving packagist API requests from Composer.
+
+## `proxy.php`
+
+Proxies API requests to the public packagist repositor API.
+
+## `update.php`
+
+Fetches roudcube-plugin packages registered at packagist.org and removes them from the static files
+served by `packagist.php`. This is to be executed periodically by a cron job.
+
+
+## Client
+
+A simple [Vue.js](https://vuejs.org) application.
+See the `README.md` file inside the `client` directory for details.
+

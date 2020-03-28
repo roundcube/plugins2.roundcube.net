@@ -1,12 +1,12 @@
 {
     "name": "roundcube/plugins-packagist-proxy",
-    "description": "Serve static composer files for Roundcube plugins previously registered at plugin.roundcube.net + proxy API requests to packagist.org with a filter for roundcube-plugins",
+    "description": "Serve static composer files for Roundcube plugins previously registered at plugins.roundcube.net + proxy API requests to packagist.org with a filter for roundcube-plugins",
     "type": "project",
     "license": "AGPLv3",
     "authors": [
         {
             "name": "Thomas Bruederli",
-            "email": "t.bruederli@nexbyte.com"
+            "email": "thomas@roundcube.net"
         }
     ],
     "require": {
@@ -16,6 +16,7 @@
         "guzzlehttp/guzzle": "^6.5"
     },
     "scripts": {
-        "serve": "php -S 0.0.0.0:8888 proxy.php"
+        "serve": "php -S 0.0.0.0:8888 packagist.php",
+        "proxy": "php -S 0.0.0.0:8888 proxy.php"
     }
 }

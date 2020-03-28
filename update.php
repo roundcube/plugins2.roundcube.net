@@ -32,8 +32,7 @@ $destfile = $DATA_DIR . '/deprecated.json';
 file_put_contents($destfile, json_encode($results, JSON_PRETTY_PRINT) . PHP_EOL);
 printf('Dumped %d packages into %s' . PHP_EOL, count($results), $destfile);
 
-// TODO: remove deprecated packages from /p/provider-* files
-
+// remove deprecated packages from /p/provider-* files
 foreach (glob($DATA_DIR . '/a/provider-*.json') as $filepath) {
   $filename = basename($filepath);
   $data = json_decode(file_get_contents($filepath), true);
