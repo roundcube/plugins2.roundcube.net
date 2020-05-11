@@ -43,7 +43,7 @@ $proxy->filter(function ($request, $response, $next) use ($logger) {
   $path = urldecode($uri->getPath());
 
   // inject a type=roundcube-plugin query param
-  if ($path === '/search.json') {
+  if ($path === '/search.json' || $path === 'packages/list.json') {
     parse_str($uri->getQuery(), $query);
     $query['type'] = 'roundcube-plugin';
     $uri = $uri->withQuery(http_build_query($query));
