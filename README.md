@@ -32,3 +32,7 @@ served by `packagist.php`. This is to be executed periodically by a cron job.
 A simple [Vue.js](https://vuejs.org) application.
 See the `README.md` file inside the `client` directory for details.
 
+
+## License
+
+All code is published under the MIT License.
