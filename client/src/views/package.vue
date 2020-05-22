@@ -15,7 +15,8 @@
       <div class="row pt-3 package">
         <div class="col-sm-12 package-header">
           <h1 class="title">
-            <a :href="`https://packagist.org/packages/${vendor}/${name}`" title="Open on packagist.org">{{ pkg.name }}</a>
+            <a :href="`https://packagist.org/packages/${vendor}/${name}`" title="Open on packagist.org" v-if="!pkg.abandoned">{{ pkg.name }}</a>
+            <span v-if="pkg.abandoned">{{ pkg.name }}</span>
           </h1>
         </div>
       </div>
@@ -27,11 +28,17 @@
           </p>
           <p class="description">{{ pkg.description }}</p>
 
-          <p class="buttons">
+          <p class="buttons" v-if="!pkg.abandoned">
             <b-button :href="`https://packagist.org/packages/${vendor}/${name}`" variant="primary" size="md">
               <i class="fas fa-external-link-alt"></i>
               Open on packagist.org
             </b-button>
+          </p>
+
+          <p class="bg-warning p-3 mb-5" v-if="pkg.abandoned">
+            <strong>This plugin is abandoned and does not get any updates!</strong><br>
+            If you're the author of this plugin, please read the instructions <a href="#/about/" class="text-secondary">how to submit plugins</a>
+            to packagist.org.
           </p>
 
           <h3>Versions</h3>
@@ -86,6 +93,7 @@ import moment from 'moment'
 import _ from 'lodash'
 
 const API_URL = 'https://packagist.org/packages/:vendor/:name.json'
+const OLD_URL = 'https://plugins.roundcube.net/d/packages/:vendor/:name.json'
 
 export default {
   name: 'Package',
@@ -110,8 +118,16 @@ export default {
   methods: {
     async fetch () {
       this.loading = true
-      const res = await fetch(API_URL.replace(':vendor', this.vendor).replace(':name', this.name))
-      const data = await res.json()
+      let res = await fetch(API_URL.replace(':vendor', this.vendor).replace(':name', this.name))
+      let data = await res.json()
+      let abandoned = false
+
+      // retry with OLD_URL
+      if (!res.ok) {
+        res = await fetch(OLD_URL.replace(':vendor', this.vendor).replace(':name', this.name))
+        data = await res.json()
+        abandoned = true
+      }
 
       // handle error response
       if (!res.ok) {
@@ -122,6 +138,7 @@ export default {
       }
 
       this.pkg = data.package || {}
+      this.pkg.abandoned = abandoned
 
       const normalizedVersion = function (item) {
         let v = item.version_normalized
