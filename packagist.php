@@ -24,7 +24,7 @@ $DATA_DIR = realpath(__dir__ . '/data');
 
 // create a log channel
 $logger = new Logger('packagist');
-$logger->pushHandler((new StreamHandler('./log/packagist.log', Logger::INFO))
+$logger->pushHandler((new StreamHandler('./log/packagist.log', Logger::WARNING))
   ->setFormatter(new LineFormatter("[%datetime%] %level_name%: %message%\n\n", null, true))
 );
 

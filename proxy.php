@@ -23,7 +23,7 @@ use Zend\HttpHandlerRunner\Emitter\SapiEmitter;
 
 // create a log channel
 $logger = new Logger('proxy');
-$logger->pushHandler((new StreamHandler('./log/proxy.log', Logger::INFO))
+$logger->pushHandler((new StreamHandler('./log/proxy.log', Logger::WARNING))
   ->setFormatter(new LineFormatter("[%datetime%] %level_name%: %message%\n\n", null, true))
 );
 
@@ -43,7 +43,7 @@ $proxy->filter(function ($request, $response, $next) use ($logger) {
   $path = urldecode($uri->getPath());
 
   // inject a type=roundcube-plugin query param
-  if ($path === '/search.json' || $path === 'packages/list.json') {
+  if ($path === '/search.json' || $path === '/packages/list.json') {
     parse_str($uri->getQuery(), $query);
     $query['type'] = 'roundcube-plugin';
     $uri = $uri->withQuery(http_build_query($query));
