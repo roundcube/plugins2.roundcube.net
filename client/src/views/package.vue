@@ -249,6 +249,10 @@ export default {
 
   p.maintainers {
     margin-bottom: 15px;
+
+    a {
+      margin-right: 15px;
+    }
   }
 
   .package-aside {
