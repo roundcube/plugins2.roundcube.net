@@ -1,1 +1,6 @@
 theme: jekyll-theme-slate
+safe: true
+encoding: UTF-8
+url: https://plugins2.roundcube.net
+enforce_ssl: plugins2.roundcube.net
+hostname: https://plugins2.roundcube.net
