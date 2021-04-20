@@ -11,7 +11,7 @@
     "@fortawesome/fontawesome-free": "^5.12.1",
     "bootstrap-vue": "^2.1.0",
     "core-js": "^3.4.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "vue": "^2.6.10",
     "vue-bootstrap-typeahead": "^0.2.6",
     "vue-moment": "^4.1.0",
