@@ -1,0 +1,7 @@
+vendor
+client
+log
+data
+_site
+Gemfile*
+composer.lock

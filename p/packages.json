@@ -1,0 +1,48 @@
+{
+  "packages": [],
+  "notify": "/downloads/%package%",
+  "notify-batch": "/downloads/",
+  "providers-url": "/p/%package%$%hash%.json",
+  "search": "/search.json?q=%query%",
+  "provider-includes": {
+    "p/provider-2013$%hash%.json": {
+      "sha256": "bab601471039bfd8878a98aa7255d6b90d871f41754d5bd40ea00c32446044ff"
+    },
+    "p/provider-2014$%hash%.json": {
+      "sha256": "8db281632c97fd9f724704130e68227bb2c18cf734d77a76892ff0c344dc9010"
+    },
+    "p/provider-2015$%hash%.json": {
+      "sha256": "a8c651ef7ec85ca2078d95b478f78c45870926d20e2c0d575b20ffee2e27d1a4"
+    },
+    "p/provider-2016$%hash%.json": {
+      "sha256": "bf201964552e13563753b4e2461c2b9a1024edc5ecbe4a13722008fa1e250cf6"
+    },
+    "p/provider-2017$%hash%.json": {
+      "sha256": "616ae89b1899b656e9b4b88df75b97a5c6f3a32efef4285b2a4b240b3cfbe06b"
+    },
+    "p/provider-2018$%hash%.json": {
+      "sha256": "6fe19e4ccfdf964c75b80ca40c5b51edd3fa126b0a7d868473a76775b9391e54"
+    },
+    "p/provider-2019$%hash%.json": {
+      "sha256": "c05c902337233e7772e242f89fb1f86654aceb91a177fc436663b391679a8856"
+    },
+    "p/provider-2019-04$%hash%.json": {
+      "sha256": "0d84be077012a86ce8c9a216d9f560e60484ac0b68da72d8c291df248d09a78d"
+    },
+    "p/provider-2019-07$%hash%.json": {
+      "sha256": "48b93dbfdba3bf38c132a83f1245776c0fb4668942fe559cccd2693379016131"
+    },
+    "p/provider-2019-10$%hash%.json": {
+      "sha256": "dc669da7d096a09926aab7915af1072b0581aa4977fc5494c42cb3a12e217c97"
+    },
+    "p/provider-2020-01$%hash%.json": {
+      "sha256": "7e38ade71a291d91e43ee94038cb55360abc1575c448309773bff4bf9ea16e95"
+    },
+    "p/provider-archived$%hash%.json": {
+      "sha256": "6d13d9484bf4b85f558a67c68d11af06acd1adf45cdb1a8e3ec315d55f6149f0"
+    },
+    "p/provider-latest$%hash%.json": {
+      "sha256": "c01801e1b37d36e6d1a4af699101b2afb1cbf44f9e92d54010cc5516dc0e85c2"
+    }
+  }
+}
