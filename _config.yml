@@ -1,5 +1,2 @@
-safe: true
 encoding: UTF-8
 url: https://plugins.roundcube.net
-enforce_ssl: plugins.roundcube.net
-hostname: https://plugins.roundcube.net
