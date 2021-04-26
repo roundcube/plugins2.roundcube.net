@@ -1,7 +1,5 @@
 {
   "packages": [],
-  "notify": "/downloads/%package%",
-  "notify-batch": "/downloads/",
   "providers-url": "/p/%package%$%hash%.json",
   "provider-includes": {
     "p/provider-2013$%hash%.json": {
